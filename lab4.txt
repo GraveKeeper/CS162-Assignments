@@ -1,0 +1,37 @@
+#include "student.h"
+#include <cstring>
+//implement the required 3 functions here
+Student::Student(const char initId[], double igpa)
+{
+	strcpy(id,initId);
+	gpa = igpa;
+}
+
+bool Student::isLessThanByID(const Student& aStudent) const
+{
+	if((strcmp(id,aStudent.id))<0)
+		return true;
+	else
+		return false;
+}
+
+bool Student::qualifyForHonor(double minGpaForHonor) const
+{
+	if(gpa > minGpaForHonor)
+		return true;
+	else
+		return false;
+}
+
+void Student::print() const
+{
+	cout << id << '\t' << gpa << endl;
+}
+
+G10	3.9
+G20	3.5
+Student 1's id is less than student 2's id 
+
+Student 1 quaifys for an honor 
+
+student 2 does not qualify for honors
